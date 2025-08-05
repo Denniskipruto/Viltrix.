@@ -1,14 +1,4 @@
-// Logo click: go to intro overlay
-document.querySelector('.logo').addEventListener('click', function(e) {
-  e.preventDefault();
-  const intro = document.getElementById('intro');
-  if (intro) {
-    intro.style.display = '';
-    intro.style.opacity = '1';
-    intro.style.transition = '';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-});
+// ...removed logo click-to-intro feature...
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("open");
 }
@@ -76,14 +66,11 @@ window.addEventListener("load", () => {
 });
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-    // Close mobile nav if open
+    // Only close mobile nav if open
     const navMenu = document.getElementById("navMenu");
     if (navMenu.classList.contains("open")) {
       navMenu.classList.remove("open");
     }
+    // Let anchor default behavior work (jump to section)
   });
 });
