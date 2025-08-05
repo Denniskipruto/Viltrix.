@@ -16,6 +16,7 @@ body {
   justify-content: center;
   z-index: 2000;
   overflow: hidden;
+/* ===== BASE/GENERAL STYLES ===== */
 }
 
 .intro-bg {
@@ -158,6 +159,9 @@ body {
 /* Dark overlay */
 .video-section::before {
   content: "";
+.yap-title {
+  margin-top: 0;
+}
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -184,6 +188,9 @@ body {
   transform: translateY(40px);
   animation: fadeUp 1.2s ease forwards;
   animation-delay: 0.8s;
+}
+.yap-text {
+  /* No extra styles needed, but class added for future-proofing */
 }
 
 @keyframes fadeUp {
@@ -221,18 +228,45 @@ html, body {
   width: 100%;
   object-fit: cover; /* fill without stretching */
 }
-.corny{
-  padding: 0.5rem;
-  
-  font-size: 4rem;
+.corny {
+  padding: 0.5em 2.5em;
+  font-size: 3.2rem;
+  background: linear-gradient(90deg, #ffd700 60%, #ffec80 100%);
+  color: #fff;
+  border-radius: 3em;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  border: 3px solid #fffbe6;
+  margin: 1.2rem auto 1.2rem auto;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
-.morecorny{
+.morecorny {
   padding: 2.2rem;
   font-size: 1.5rem;
+  list-style: none;
+  margin: 0;
 }
-.morecorny1{
-  padding: 0.5;
+
+.custom-icons li {
+  display: flex;
+  align-items: center;
+  gap: 1.1em;
+  margin-bottom: 0.7em;
+}
+.icon-li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+}
+.morecorny1 {
+  padding: 1.5rem 2.2rem;
   font-size: 1.5rem;
+  line-height: 1.7;
 }
 .hero-cta-container {
   text-align: center;
