@@ -66,11 +66,16 @@ window.addEventListener("load", () => {
 });
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
-    // Only close mobile nav if open
     const navMenu = document.getElementById("navMenu");
+    const href = this.getAttribute("href");
     if (navMenu.classList.contains("open")) {
-      navMenu.classList.remove("open");
+      // For mobile, close menu after navigation
+      setTimeout(() => navMenu.classList.remove("open"), 350);
+      // Use location.hash to ensure navigation works
+      window.location.hash = href;
+      // Prevent default only on mobile to avoid double jump
+      e.preventDefault();
     }
-    // Let anchor default behavior work (jump to section)
+    // On desktop, let anchor work as normal
   });
 });
