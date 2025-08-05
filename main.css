@@ -4,22 +4,29 @@
 
 @media (max-width: 600px) {
   .corny {
-    font-size: 2rem;
-    padding: 0.4em 1em;
+    font-size: 1.3rem;
+    padding: 0.4em 0.7em;
     border-radius: 2em;
     margin: 0.7rem auto 0.7rem auto;
-    word-break: break-word;
-    line-height: 1.2;
+    white-space: pre-line;
+    word-break: normal;
+    line-height: 1.25;
+    display: block;
+    text-align: center;
   }
   .video-section {
-    height: 45vh;
-    min-height: 240px;
+    height: 38vh;
+    min-height: 180px;
     max-height: 60vw;
+    width: 100vw;
+    overflow: hidden;
   }
   .bg-video {
     min-height: 100%;
     max-height: 100%;
+    width: 100vw;
     object-fit: cover;
+    display: block;
   }
 }
 /* ===== GENERAL ===== */
@@ -319,4 +326,29 @@ html, body {
   color: black;
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+}
+
+
+/* Fade in + move slightly upward */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gentle floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.list{
+  list-style: lower-alpha;
+  padding: 2rem;
+  font-size: 1.5rem;
 }
